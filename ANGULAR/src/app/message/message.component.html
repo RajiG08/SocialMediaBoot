@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+
+<div class="main-container">
+  <!-- User List Section -->
+  <div class="user-list">
+    <div class="user-item" *ngFor="let user of filteredUsers()">
+      <div class="user-info">
+        <img [src]="user.image" alt="User Icon" class="user-icon" />
+        <div class="user-details">
+          <p class="user-name">{{ user.name }}</p>
+          <p class="user-caption">{{ user.caption }}</p>
+        </div>
+      </div>
+      <button class="button-34" (click)="startChat(user)">
+        Chat
+      </button>
+    </div>
+  </div>
+
+  <!-- Chat Section (only visible when a user is selected) -->
+  <div class="chat-section" *ngIf="selectedUser">
+    <!-- Header with user profile and name -->
+    <div class="chat-header">
+      <img [src]="selectedUser?.image" alt="User Icon" class="user-icon" />
+      <div class="user-details">
+        <p class="user-name">{{ selectedUser?.name || 'Select a user to chat' }}</p>
+      </div>
+    </div>
+
+    <!-- Chat messages -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="mobile">
+            <div class="chat-w">
+              <ul>
+                <li *ngFor="let message of selectedUser?.messages">
+                  <div [ngClass]="message.isUser ? 'bubble2' : 'bubble'">
+                    {{ message.text }}
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Input Section -->
+    <div class="message-input" style="position: absolute; bottom: 20px; right: 20px; width: calc(100% - 40px); max-width: 500px; display: flex; gap: 10px;">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type a message" class="input-box" style="flex-grow: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" />
+      <button class="send-button" (click)="sendMessage()" style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Send</button>
+    </div>
+  </div>
+</div>
