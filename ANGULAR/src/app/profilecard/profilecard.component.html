@@ -1,0 +1,35 @@
+<div class="profile-card">
+  <header>
+    <div class="avatar">
+      <img src="assets/femaleuser.png" alt="User Profile Picture" />
+    </div>
+  </header>
+
+  <!-- Display name or username, with a loading fallback -->
+  <h3 *ngIf="name || username">{{ name || username }}</h3>
+  <h3 *ngIf="!name && !username">Loading...</h3>
+
+  <div class="desc">
+    Welcome to the user profile. Here, you can manage your account and view your details.
+  </div>
+
+  <div class="contacts">
+    <a href="https://wa.me/1234567890" target="_blank" title="Direct connection on WhatsApp">
+      <i class="fa fa-whatsapp"></i>
+    </a>
+    <a href="mailto:user@example.com" title="Contact via Email">
+      <i class="fa fa-envelope"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" title="Visit Instagram">
+      <i class="fa fa-instagram"></i>
+    </a>
+  </div>
+
+  <footer>
+    <p>
+      <a><i class="fa fa-facebook-square"></i></a>
+      <a><i class="fa fa-twitter-square"></i></a>
+      <a><i class="fa fa-linkedin"></i></a>
+    </p>
+  </footer>
+</div>
