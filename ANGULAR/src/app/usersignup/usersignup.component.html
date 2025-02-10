@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <!-- Left Blank Side -->
+    <div class="col-lg-6"></div>
+
+    <!-- Right Side Form -->
+    <div class="col-lg-6 d-flex align-items-center justify-content-center right-side">
+      <div class="form-2-wrapper">
+        <div class="logo text-center">
+          <h2>Logo</h2>
+        </div>
+        <h2 class="text-center mb-4">Sign Up for an Account</h2>
+        <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+          <div class="mb-3 form-box">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              placeholder="Enter Your Username"
+              [(ngModel)]="signupData.username"
+              required
+            />
+          </div>
+          <div class="mb-3 form-box">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter Your Email"
+              [(ngModel)]="signupData.email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Enter Your Password"
+              [(ngModel)]="signupData.password"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Enter Your Name"
+              [(ngModel)]="signupData.name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <select
+              class="form-control"
+              id="privacyStatus"
+              name="privacyStatus"
+              [(ngModel)]="signupData.privacyStatus"
+              required
+            >
+              <option value="" disabled selected>Select Privacy Status</option>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-outline-secondary login-btn w-100 mb-3"
+            [disabled]="!signupForm.form.valid"
+          >
+            Sign Up
+          </button>
+        </form>
+
+        <!-- Login Link -->
+        <p class="text-center register-test mt-3" style="font-weight: bold; color:#CA5D04">
+          Already have an account?
+          <a href="/userlogin" class="text-decoration-none">Login here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
