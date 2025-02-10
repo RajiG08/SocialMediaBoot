@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<div class="feed">
+  <app-sidebar></app-sidebar>
+
+  <div class="posts">
+    <div *ngFor="let post of posts; let i = index" class="post">
+      <div class="post-header">
+        <img src="assets/man.png" alt="User icon" class="user-icon">
+        <span>{{ post.username }}</span>
+      </div>
+      
+      <!-- Display Image -->
+      <div class="image-wrapper">
+        <img *ngIf="post.image" [src]="post.image" class="post-image" alt="Post image" />
+      </div>
+      
+      <div class="post-caption">
+        <strong>{{ post.username }}</strong> {{ post.caption }}
+      </div>
+    
+      <div class="post-likes">
+        <span>{{ post.likesCount }} likes</span>
+        <i class="heart-icon" [ngClass]="{ 'liked': post.liked }" (click)="toggleLike(post)">
+          ♥
+        </i>
+      </div>
+    
+      <div class="post-comments">
+        <div *ngFor="let comment of post.comments">
+          <strong>{{ comment.username }}</strong> {{ comment.commentText }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-profilecard></app-profilecard>
+</div>
