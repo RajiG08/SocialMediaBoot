@@ -1,0 +1,116 @@
+<main class="flexbox-col">
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+
+  <!-- Main Content Layout -->
+  <div class="main-layout flexbox">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Profile Content -->
+    <div class="content-wrapper">
+      <!-- Profile Header Section -->
+      <div class="profile-header-wrapper flexbox">
+        <form class="profile-header flexbox" method="post" action="" enctype="multipart/form-data">
+          <div class="profile-header-img-wrapper">
+            <fieldset class="profile-pic-upload-input">
+              <input type="file" name="image" id="choose-profile-header" value="Velg bilde" accept="images">
+            </fieldset>
+            <a><img class="profile-header-img" alt="" src="https://i.imgur.com/KBWXjaR.jpg"></a>
+          </div>
+          <div class="profile-header-overlay"></div>
+          <img class="profile-header-img-back" alt="" src="https://i.imgur.com/KBWXjaR.jpg">
+        </form>
+        <div class="profile-header-note flexbox">
+          <p>Upload Photo</p>
+        </div>
+      </div>
+
+      <!-- Profile Top Section -->
+      <div class="profile-top">
+        <div class="profile-left">
+          <form class="profile-pic-upload" method="post" action="" enctype="multipart/form-data">
+            <div class="profile-pic-wrapper">
+              <fieldset class="profile-pic-upload-input">
+                <input type="file" name="image" id="choose-profile-picture" value="Velg bilde" accept="images">
+              </fieldset>
+              <a class="profile-pic"><img src="https://i.imgur.com/aIcL9f6.jpg" alt=""></a>
+              <div class="profile-pic-note flexbox">
+                <p>Upload Photo</p>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="profile-info" style="font-family: Arial, sans-serif; padding: 10px;">
+          <span class="username" style="font-size: 24px; font-weight: bold;">{{username}}</span>
+          <span class="follower-following" style="font-size: 16px; margin-left: 20px;">
+            <span class="followers" style="font-size: 16px; font-weight: normal;">Followers: 100</span>
+            <span class="following" style="font-size: 16px; font-weight: normal; margin-left: 10px;">Following: 50</span>
+          </span>
+        </div>
+        
+        <!--Profile Page Navigation (Posts, Images, Saved)--> 
+        <div class="profile-page-nav flexbox" style="justify-content: flex-start;"> 
+          <!-- <div class="profile-page-block">
+            <a><i class="uil uil-chat"></i> Posts</a>
+          </div>
+          <div class="profile-page-block">
+            <a><i class="uil uil-apps"></i> Images</a>
+          </div>
+          <div class="profile-page-block">
+            <a><i class="uil uil-bookmark-full"></i> Saved</a>
+          </div>-->
+        </div>
+
+        
+        <div class="profile-page-inner">
+      
+          <div *ngFor="let post of posts; let i = index" class="post">
+            <div class="post-header">
+              <img src="assets/man.png" alt="User icon" class="user-icon">
+              <span>{{ username }}</span>
+            </div>
+
+            <!-- Display Image -->
+            <div class="image-wrapper">
+              <img *ngIf="post.image" [src]="post.image" class="post-image" alt="Post image" />
+            </div>
+
+            <div class="post-caption">
+              <strong>{{ username }}</strong> {{ post.caption }}
+            </div>
+
+            <div class="post-likes">
+              <span>{{ post.likesCount }} likes</span>
+              <i class="heart-icon" [ngClass]="{ 'liked': post.liked }" (click)="toggleLike(post)">
+                ♥
+              </i>
+            </div>
+
+            <div class="post-comments">
+              <div *ngFor="let comment of post.comments">
+                <strong>{{ comment.username }}</strong> {{ comment.commentText }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 766.15 715.7">
+      <defs>
+        <style>.cls-1{fill:var(--primary);}.cls-2{fill:var(--primary);}.cls-3{fill:var(--primary);}</style>
+      </defs>
+      <title>Icon</title>
+      <polygon class="cls-1" points="0 684.86 0 414.84 136.41 549.85 0 684.86"/>
+      <polygon class="cls-2" points="0 331.69 0 0 547.52 549.85 382.29 715.7 0 331.69"/>
+      <polygon class="cls-1" points="766.15 684.86 766.15 414.84 631.61 549.85 766.15 684.86"/>
+      <polygon class="cls-3" points="425.12 343.83 766.15 4.67 766.15 333.56 588.63 508.27 425.12 343.83"/>
+    </svg>
+  </footer>
+</main>
