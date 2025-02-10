@@ -1,0 +1,207 @@
+/* Main container with flexbox */
+.main-container {
+  display: flex;
+  height: 100vh;
+  padding-top: 70px;
+}
+
+/* User list section */
+.user-list {
+  width: 30%; /* Set width of user list */
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Chat section */
+.chat-section {
+  flex: 1; /* Makes the chat section take up the remaining width */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* User item in the list */
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.chat-header .user-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.chat-header .user-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Message bubbles */
+.bubble, .bubble2 {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.bubble {
+  background-color: #e5e5ea;
+  text-align: left;
+  float: left;
+}
+
+.bubble2 {
+  background-color: #313443;
+  color: white;
+  text-align: right;
+  float: right;
+}
+
+/* Message input at the bottom */
+.message-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-box {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.send-button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #45a049;
+}
+
+/* For mobile chat window */
+.mobile {
+  background-image: url('http://mockuphone.com/static/images/phones/iphone6/iphone6_silver_portrait.png');
+  background-repeat: no-repeat;
+  background-size: content;
+  display: inline-block;
+  width: 330px;
+  height: 640px;
+  background-position: center;
+  position: relative;
+}
+
+.chat-w {
+  background-color: #fff;
+  display: inline-block;
+  width: 262px;
+  position: absolute;
+  top: 80px;
+  border-radius: 4px;
+  left: 25px;
+  bottom: 0; 
+  overflow-y: auto;
+}
+
+/* User List section layout */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.user-caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Styling for buttons */
+.search-button, .button-34 {
+  background: #313443;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 18px;
+  width: fit-content;
+  border: 0;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover, .button-34:hover {
+  background-color: #505050;
+}
+
+.search-button:active, .button-34:active {
+  background-color: #2c2f37;
+}
