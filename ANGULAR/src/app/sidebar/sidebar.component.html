@@ -1,0 +1,29 @@
+<nav class="sidebar-navigation">
+  <ul>
+    <li (click)="logout()">
+      <img src="assets/content-media.gif" alt="Connections" />
+      <span class="tooltip">Logout</span>
+    </li>
+    
+    <li routerLink="/message" routerLinkActive="active">
+      <img src="assets/message.gif" alt="Devices" />
+      <span class="tooltip">Inbox</span>
+    </li>
+    <li routerLink="/search" routerLinkActive="active">
+      <img src="assets/search.gif" alt="Contacts" />
+      <span class="tooltip">Find People</span>
+    </li>
+    <li routerLink="/profile" routerLinkActive="active">
+      <img src="assets/user.gif" alt="Profile" />
+      <span class="tooltip">Profile</span>
+    </li>
+    <li routerLink="/feed" routerLinkActive="active">
+      <img src="assets/homes.gif" alt="Home" />
+      <span class="tooltip">Home</span>
+    </li>
+    <!-- <button routerLink="/" routerLinkActive="active" (click)="logout()">
+      <img src="assets/homes.gif" alt="Home" />
+      <span class="tooltip">logout</span>
+    </button> -->
+  </ul>
+</nav>
